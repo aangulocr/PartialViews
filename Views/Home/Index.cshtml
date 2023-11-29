@@ -1,0 +1,49 @@
+﻿@*@model PruebaPartialView.Controllers.Persona*@
+@model List<PruebaPartialView.Controllers.Persona>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section>
+        <p>Ejemplo de Formulario en Partial View</p>
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.Error
+            </div>
+        }
+    </section>
+    <section>
+        <hr />
+        <h2>Información de la Busqueda</h2>
+    </section>
+
+    <form action="/" method="post">
+        <label>Ingresar Nombre</label>
+        <input type="text" name="name" value="" />
+       
+
+        <br />
+        <br />
+        <label>Ingresar Correo</label>
+        <input type="email" name="Email" value="" />
+        
+        <br />
+        <br />
+        <label>Ingresar Telefono</label>
+        <input type="number" name="Phone" value="" />
+        
+        <br />
+        <br />
+        <button class="btn btn-dark">Agregar</button>
+    </form>
+    <br />
+    @if (Model != null)
+    {
+        @Html.Partial("BdInfo", (List<PruebaPartialView.Controllers.Persona>)ViewBag.Milistado)
+    }
+
+
+</main>
