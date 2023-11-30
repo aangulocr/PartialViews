@@ -1,27 +1,27 @@
 ﻿@model List<PruebaPartialView.Controllers.Persona>
 
-<div>
-    <table class="table table-striped table-responsive">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Correo</th>
-                <th>Telefono</th>
-            </tr>
-        </thead>
-        <tbody>           
+<div>	
+	<table class="table table-striped table-responsive">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Correo</th>
+				<th>Telefono</th>
+			</tr>
+		</thead>
+		<tbody>
 
-            @foreach (var persona in Model)
-            {
-                <tr>
-                    <td>@persona.Name</td>
-                    <td>@persona.Email</td>
-                    <td>@persona.Phone</td>
-                </tr>
+			@foreach (var persona in Model)			
+			{
+				<tr>
+					<td>@persona.Name</td>
+					<td>@persona.Email</td>
+					<td>@persona.Phone</td>
+				</tr>
 
-            }
-        </tbody>
-    </table>
+			}
+		</tbody>
+	</table>
 </div>
 
 

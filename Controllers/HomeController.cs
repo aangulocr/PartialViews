@@ -10,30 +10,11 @@ namespace PruebaPartialView.Controllers
 {
     public class HomeController : Controller
     {
+        private static List<Persona> personaList = new List<Persona>();
+
         public ActionResult Index()
         {
-            //var personas = new List<Persona>()
-            //{
-            //    new Persona()
-            //    {
-            //        Id = 1,
-            //        Name = "Marcela",
-            //        Email = "mcela@gmail.com",
-            //        Phone = "12345"
-            //    },
-            //    new Persona()
-            //    {
-            //        Id=2,
-            //        Name = "Henry",
-            //        Email="henry@gmail.com",
-            //        Phone = "67890"
-            //    }
-            //};
-
-            //ViewBag.Milistado = personas;
-            
-            //HttpContext.Session["Lista"] = personas;
-            //_encuestado.LenguajePrimario = (List<string>)HttpContext.Session["Programas"];
+           
 
             return View();
         }
@@ -54,14 +35,9 @@ namespace PruebaPartialView.Controllers
             persona.Email = _persona.Email;
             persona.Phone = _persona.Phone;
 
-            List<Persona> lista = new List<Persona>();
-            lista = (List<Persona>)HttpContext.Session["Lista"];
-            lista.Add(persona);
+            personaList.Add(persona);           
 
-            HttpContext.Session["Lista"] = lista;
-            
-            
-            return View(lista);
+            return View(personaList);
 
          }
 
